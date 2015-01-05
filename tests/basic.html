@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing jQuery.stickytabs.js</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.js"></script>
+    <script src="jquery.stickytabs.js"></script>
+    <script>
+    $(function() {
+        $('.nav-tabs-sticky').stickyTabs();
+    });
+    </script>
+  </head>
+  <body>
+  <div class="container">
+
+    <div role="tabpanel">
+
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs nav-tabs-sticky" role="tablist">
+        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">Home</div>
+        <div role="tabpanel" class="tab-pane" id="profile">Profile</div>
+        <div role="tabpanel" class="tab-pane" id="messages">Messages</div>
+        <div role="tabpanel" class="tab-pane" id="settings">Settings</div>
+      </div>
+
+    </div>
+
+  </div>
+  </body>
+</html>
