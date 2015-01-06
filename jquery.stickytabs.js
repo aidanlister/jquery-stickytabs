@@ -23,7 +23,7 @@
         showTabFromHash(context)
 
         // Set the correct tab when a user uses their back/forward button
-        window.addEventListener('hashchange', showTabFromHash, false);
+        $(window).on('hashchange', showTabFromHash);
 
         // Change the URL when tabs are clicked using
         //   window.location.hash which sets the state without needing pushState.
