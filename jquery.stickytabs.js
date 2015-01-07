@@ -2,21 +2,31 @@
  * jQuery Plugin: Sticky Tabs
  *
  * @author Aidan Lister <aidan@php.net>
- * @version 1.0.1
+ * @version 1.1.2
  */
 (function ( $ ) {
     $.fn.stickyTabs = function( options ) {
         var context = this
 
         var settings = $.extend({
-            getHashCallback: function(hash, btn) { return hash }
+            getHashCallback: function(hash, btn) { return hash },
+            fallbackHash: ''
         }, options );
 
         // Show the tab corresponding with the hash in the URL, or the first tab.
         var showTabFromHash = function() {
           var hash = window.location.hash;
-          var selector = hash ? 'a[href="' + hash + '"]' : 'li.active > a';
+          var selector = hash ? 'a[href="' + hash + '"]' : getFallbackHash();
           $(selector, context).tab('show');
+        }
+
+        var getFallbackHash = function() {
+            if(settings.fallbackHash != '')
+            {
+                return 'a[href="' + settings.fallbackHash + '"]';
+            }
+
+            return 'li.active > a';
         }
 
         // Set the correct tab when the page loads
