@@ -6,11 +6,11 @@
  */
 (function ( $ ) {
     $.fn.stickyTabs = function( options ) {
-        var context = this
+        var context = this;
 
         var settings = $.extend({
             getHashCallback: function(hash, btn) { return hash },
-            fallbackHash: ''
+            defaultHash: '',
         }, options );
 
         // Show the tab corresponding with the hash in the URL, or the first tab.
@@ -21,16 +21,19 @@
         }
 
         var getFallbackHash = function() {
-            if(settings.fallbackHash != '')
+
+            if(settings.defaultHash != '')
             {
-                return 'a[href="' + settings.fallbackHash + '"]';
+                return 'a[href="#' + settings.defaultHash + '"]';
             }
 
             return 'li.active > a';
         }
 
+        settings.defaultHash = $("li.active > a", context).prop("href").split('#')[1];
+
         // Set the correct tab when the page loads
-        showTabFromHash(context)
+        showTabFromHash(context);
 
         // Set the correct tab when a user uses their back/forward button
         $(window).on('hashchange', showTabFromHash);
