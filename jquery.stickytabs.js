@@ -2,7 +2,7 @@
  * jQuery Plugin: Sticky Tabs
  *
  * @author Aidan Lister <aidan@php.net>
- * @version 1.1.0
+ * @version 1.2.0
  */
 (function ( $ ) {
     $.fn.stickyTabs = function( options ) {
