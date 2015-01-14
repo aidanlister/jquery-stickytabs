@@ -2,7 +2,7 @@
  * jQuery Plugin: Sticky Tabs
  *
  * @author Aidan Lister <aidan@php.net>
- * @version 1.0.1
+ * @version 1.1.0
  */
 (function ( $ ) {
     $.fn.stickyTabs = function( options ) {
@@ -19,17 +19,30 @@
           $(selector, context).tab('show');
         }
 
+        // We use pushState if it's available so the page won't jump, otherwise a shim.
+        var changeHash = function(hash) {
+          if (history && history.pushState) {
+            history.pushState(null, null, '#' + hash);
+          } else {
+            scrollV = document.body.scrollTop;
+            scrollH = document.body.scrollLeft;
+            window.location.hash = hash;
+            document.body.scrollTop = scrollV;
+            document.body.scrollLeft = scrollH;
+          }
+        }
+
         // Set the correct tab when the page loads
         showTabFromHash(context)
 
         // Set the correct tab when a user uses their back/forward button
         $(window).on('hashchange', showTabFromHash);
 
-        // Change the URL when tabs are clicked using
-        //   window.location.hash which sets the state without needing pushState.
+        // Change the URL when tabs are clicked
         $('a', context).on('click', function(e) {
           var hash = this.href.split('#')[1];
-          window.location.hash = settings.getHashCallback(hash, this)
+          var adjustedhash = settings.getHashCallback(hash, this);
+          changeHash(adjustedhash);
         });
 
         return this;
