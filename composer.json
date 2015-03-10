@@ -1,0 +1,35 @@
+{
+  "name": "aidanlister/jquery-stickytabs",
+  "type": "component",
+  "description": "This component extends bootstrap-tabs default behaviour to remember the selected tab across page reloads by using the location.hash. This also allows linking to a specific tab.",
+  "authors": [
+    {
+      "name": "Aidan Lister",
+      "email": "aidan@php.net",
+      "homepage": "http://aidanlister.com"
+    }
+  ],
+  "homepage": "http://aidanlister.com/2014/03/persisting-the-tab-state-in-bootstrap",
+  "keywords": [
+    "jQuery",
+    "Bootstrap"
+  ],
+  "license": "Public Domain",
+  "support": {
+    "source": "https://github.com/aidanlister/jquery-stickytabs"
+  },
+  "extra": {
+    "component": {
+      "scripts": [
+        "jquery.stickytabs.js"
+      ]
+    }
+  },
+  "require": {
+    "robloach/component-installer": "*"
+  },
+  "require-dev": {
+    "components/bootstrap" : ">=2.3",
+    "components/jquery": ">=1.9.0"
+  }
+}
