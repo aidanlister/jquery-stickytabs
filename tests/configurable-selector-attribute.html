@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing jQuery.stickytabs.js</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.js"></script>
+    <script src="../jquery.stickytabs.js"></script>
+    <script>
+    $(function() {
+        var options = { selectorAttribute: "data-target" };
+        $('.nav-tabs-sticky').stickyTabs(options);
+    });
+    </script>
+  </head>
+  <body>
+  <div class="container">
+    <div class="col-xs-12">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non sem dignissim, tempus tellus eget, efficitur erat. Aliquam semper finibus massa nec bibendum. Integer interdum, nisl vel molestie egestas, odio tellus rhoncus nisl, vel tincidunt leo ante et tortor. Fusce id nisl in felis commodo dictum. Vivamus non laoreet quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec efficitur vehicula laoreet. Aliquam vitae pretium urna. Donec elit neque, viverra vitae viverra et, elementum eget mauris. Fusce eget diam ut nunc viverra ullamcorper eget condimentum ex. Fusce lacinia iaculis enim, nec tincidunt ex iaculis ut. Mauris rutrum purus vitae purus consequat tincidunt. Integer vehicula orci a vulputate pulvinar.</p>
+
+    </div>
+
+    <div class="col-sm-6">
+      <div role="tabpanel">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs nav-tabs-sticky" role="tablist">
+          <li role="presentation"><a href="#[data-section='section1']" data-target="[data-section='section1']" role="tab" data-toggle="tab">Section 1</a></li>
+          <li role="presentation"><a href="#[data-section='section2']" data-target="[data-section='section2']" role="tab" data-toggle="tab">Section 2</a></li>
+          <li role="presentation"><a href="#[data-section='section3'], [data-section='section4']" data-target="[data-section='section3'], [data-section='section4']" role="tab" data-toggle="tab">Section 3 and 4</a></li>
+          <li role="presentation"><a href="#[data-section*='section']" data-target="[data-section*='section']" role="tab" data-toggle="tab">All Sections</a></li>
+          <li role="presentation"><a href="#[data-section~='last']" data-target="[data-section~='last']" role="tab" data-toggle="tab">Last Section</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane" data-section="section1">
+            <p><strong>Section 1</strong></p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non sem dignissim, tempus tellus eget, efficitur erat. Aliquam semper finibus massa nec bibendum. Integer interdum, nisl vel molestie egestas, odio tellus rhoncus nisl, vel tincidunt leo ante et tortor. Fusce id nisl in felis commodo dictum. Vivamus non laoreet quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec efficitur vehicula laoreet. Aliquam vitae pretium urna. Donec elit neque, viverra vitae viverra et, elementum eget mauris. Fusce eget diam ut nunc viverra ullamcorper eget condimentum ex. Fusce lacinia iaculis enim, nec tincidunt ex iaculis ut. Mauris rutrum purus vitae purus consequat tincidunt. Integer vehicula orci a vulputate pulvinar.</p>
+          </div>
+          <div role="tabpanel" class="tab-pane" data-section="section2">
+            <p><strong>Section 2</strong></p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non sem dignissim, tempus tellus eget, efficitur erat. Aliquam semper finibus massa nec bibendum. Integer interdum, nisl vel molestie egestas, odio tellus rhoncus nisl, vel tincidunt leo ante et tortor. Fusce id nisl in felis commodo dictum. Vivamus non laoreet quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec efficitur vehicula laoreet. Aliquam vitae pretium urna. Donec elit neque, viverra vitae viverra et, elementum eget mauris. Fusce eget diam ut nunc viverra ullamcorper eget condimentum ex. Fusce lacinia iaculis enim, nec tincidunt ex iaculis ut. Mauris rutrum purus vitae purus consequat tincidunt. Integer vehicula orci a vulputate pulvinar.</p>
+          </div>
+          <div role="tabpanel" class="tab-pane" data-section="section3">
+
+            <p><strong>Section 3</strong></p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non sem dignissim, tempus tellus eget, efficitur erat. Aliquam semper finibus massa nec bibendum. Integer interdum, nisl vel molestie egestas, odio tellus rhoncus nisl, vel tincidunt leo ante et tortor. Fusce id nisl in felis commodo dictum. Vivamus non laoreet quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec efficitur vehicula laoreet. Aliquam vitae pretium urna. Donec elit neque, viverra vitae viverra et, elementum eget mauris. Fusce eget diam ut nunc viverra ullamcorper eget condimentum ex. Fusce lacinia iaculis enim, nec tincidunt ex iaculis ut. Mauris rutrum purus vitae purus consequat tincidunt. Integer vehicula orci a vulputate pulvinar.</p>
+          </div>
+          <div role="tabpanel" class="tab-pane" data-section="section4">
+
+            <p><strong>Section 4</strong></p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non sem dignissim, tempus tellus eget, efficitur erat. Aliquam semper finibus massa nec bibendum. Integer interdum, nisl vel molestie egestas, odio tellus rhoncus nisl, vel tincidunt leo ante et tortor. Fusce id nisl in felis commodo dictum. Vivamus non laoreet quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec efficitur vehicula laoreet. Aliquam vitae pretium urna. Donec elit neque, viverra vitae viverra et, elementum eget mauris. Fusce eget diam ut nunc viverra ullamcorper eget condimentum ex. Fusce lacinia iaculis enim, nec tincidunt ex iaculis ut. Mauris rutrum purus vitae purus consequat tincidunt. Integer vehicula orci a vulputate pulvinar.</p>
+          </div>
+          <div role="tabpanel" class="tab-pane" data-section="section5 last">
+
+            <p><strong>Section 4</strong></p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non sem dignissim, tempus tellus eget, efficitur erat. Aliquam semper finibus massa nec bibendum. Integer interdum, nisl vel molestie egestas, odio tellus rhoncus nisl, vel tincidunt leo ante et tortor. Fusce id nisl in felis commodo dictum. Vivamus non laoreet quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec efficitur vehicula laoreet. Aliquam vitae pretium urna. Donec elit neque, viverra vitae viverra et, elementum eget mauris. Fusce eget diam ut nunc viverra ullamcorper eget condimentum ex. Fusce lacinia iaculis enim, nec tincidunt ex iaculis ut. Mauris rutrum purus vitae purus consequat tincidunt. Integer vehicula orci a vulputate pulvinar.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <p>Tests:</p>
+      <ol>
+        <li><a href="#[data-section='section2']">Tab change</a>: Should show "Section 2" and the Section 2 tab should be active.</li>
+        <li><a href="#[data-section='section1']">First tab</a>: Should show "Section 1" and the Section 1 tab should be active.</li>
+        <li><a href="#[data-section*='section']">All sections</a>: Should show all Sections and the "All" tab should be active.</li>
+        <li><a onclick="window.history.go(-1)">Back button</a>: Should go back to the settings tab.</li>
+      </ol>
+    </div>
+
+  </div>
+  </body>
+</html>
