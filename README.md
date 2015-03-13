@@ -17,3 +17,8 @@ Override the default `href` attribute used as selector when you need to activate
 
     var options = { selectorAttribute: "data-target" };
     $('.nav-tabs').stickyTabs( options );
+
+NuGet package
+=============
+
+Tim Abell maintains a [nuget package of stickytabs](https://www.nuget.org/packages/jquery.stickytabs/) for easier installation in .NET projects. Report any packaging issues here: https://github.com/timabell/jquery-stickytabs/issues
