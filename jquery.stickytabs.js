@@ -24,7 +24,7 @@
         // We use pushState if it's available so the page won't jump, otherwise a shim.
         var changeHash = function(hash) {
           if (history && history.pushState) {
-            history.pushState(null, null, '#' + hash);
+            history.pushState(null, null, window.location.pathname + '#' + hash);
           } else {
             scrollV = document.body.scrollTop;
             scrollH = document.body.scrollLeft;
