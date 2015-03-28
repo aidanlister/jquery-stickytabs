@@ -10,13 +10,14 @@
 
         var settings = $.extend({
             getHashCallback: function(hash, btn) { return hash },
-            selectorAttribute: "href"
+            selectorAttribute: "href",
+            initialTab: $('li.active > a', context)
         }, options );
 
         // Show the tab corresponding with the hash in the URL, or the first tab.
         var showTabFromHash = function() {
-          var hash = settings.selectorAttribute == "href" ? window.location.hash : window.location.hash.substring(1); //Omit the hash character ('#');
-          var selector = hash ? 'a[' + settings.selectorAttribute +'="' + hash + '"]' : 'li.active > a';
+          var hash = settings.selectorAttribute == "href" ? window.location.hash : window.location.hash.substring(1);
+          var selector = hash ? 'a[' + settings.selectorAttribute +'="' + hash + '"]' : settings.initialTab;
           $(selector, context).tab('show');
         }
 
@@ -34,7 +35,7 @@
         }
 
         // Set the correct tab when the page loads
-        showTabFromHash(context)
+        showTabFromHash();
 
         // Set the correct tab when a user uses their back/forward button
         $(window).on('hashchange', showTabFromHash);
