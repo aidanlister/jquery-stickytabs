@@ -18,6 +18,11 @@ Override the default `href` attribute used as selector when you need to activate
     var options = { selectorAttribute: "data-target" };
     $('.nav-tabs').stickyTabs( options );
 
+Prevent the page from jumping down to the tab content by setting the backToTop setting to true.
+
+    var options = { backToTop: true };
+    $('.nav-tabs').stickyTabs( options );
+
 NuGet package
 =============
 
