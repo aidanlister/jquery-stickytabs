@@ -11,6 +11,7 @@
         var settings = $.extend({
             getHashCallback: function(hash, btn) { return hash },
             selectorAttribute: "href",
+            backToTop: false,
             initialTab: $('li.active > a', context)
         }, options );
 
@@ -19,6 +20,11 @@
           var hash = settings.selectorAttribute == "href" ? window.location.hash : window.location.hash.substring(1);
           var selector = hash ? 'a[' + settings.selectorAttribute +'="' + hash + '"]' : settings.initialTab;
           $(selector, context).tab('show');
+          if (settings.backToTop === true) {
+            setTimeout (function () {
+              window.scrollTo(0, 0);
+            }, 1);
+          }
         }
 
         // We use pushState if it's available so the page won't jump, otherwise a shim.
