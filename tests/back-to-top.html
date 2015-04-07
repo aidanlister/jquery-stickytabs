@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing jQuery.stickytabs.js</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.js"></script>
+    <script src="../jquery.stickytabs.js"></script>
+    <script>
+    $(function() {
+      var options = { backToTop: true };
+      $('.nav-tabs-sticky').stickyTabs(options);
+    });
+    </script>
+  </head>
+  <body>
+  <div class="container">
+    <div class="col-xs-12">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non sem dignissim, tempus tellus eget, efficitur erat. Aliquam semper finibus massa nec bibendum. Integer interdum, nisl vel molestie egestas, odio tellus rhoncus nisl, vel tincidunt leo ante et tortor. Fusce id nisl in felis commodo dictum. Vivamus non laoreet quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec efficitur vehicula laoreet. Aliquam vitae pretium urna. Donec elit neque, viverra vitae viverra et, elementum eget mauris. Fusce eget diam ut nunc viverra ullamcorper eget condimentum ex. Fusce lacinia iaculis enim, nec tincidunt ex iaculis ut. Mauris rutrum purus vitae purus consequat tincidunt. Integer vehicula orci a vulputate pulvinar.</p>
+
+      <p>Aliquam dignissim arcu non arcu ultrices interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc faucibus, risus ullamcorper dignissim mattis, lectus lectus consectetur nisi, sit amet pretium mi erat id erat. Nulla interdum diam id nisl tincidunt, eget gravida elit lacinia. Sed gravida diam sapien, ut sagittis nunc ullamcorper in. Curabitur nec ipsum vitae enim egestas varius. In quis sagittis leo.</p>
+
+      <p>Proin lorem diam, vestibulum eget ipsum vel, porta posuere orci. Donec pharetra, ligula at dapibus efficitur, erat augue finibus lectus, nec tincidunt quam elit at orci. Aliquam erat volutpat. Suspendisse facilisis malesuada quam, eu euismod mi efficitur a. Curabitur dignissim faucibus elit, vel laoreet erat eleifend nec. Pellentesque pharetra ac sapien et feugiat. Praesent non metus ut neque imperdiet mattis.</p>
+
+      <p>Aenean leo enim, tempus id dui eget, ultrices convallis nibh. In volutpat, nisi quis eleifend dignissim, mauris nisl placerat velit, eget lobortis risus ante non massa. Aliquam augue lectus, hendrerit sit amet finibus quis, tincidunt ut erat. Integer malesuada nunc at nibh sodales laoreet. Mauris vel arcu ullamcorper, feugiat nisi a, ultrices mauris. Quisque pretium viverra urna. Maecenas magna dui, sollicitudin in pharetra ut, finibus porta lectus. Donec elit nisi, vehicula non diam sit amet, lobortis suscipit magna. Etiam hendrerit volutpat feugiat. Ut euismod posuere purus, ut condimentum tellus rhoncus sed. In rutrum dictum nibh, in feugiat sapien euismod nec. Praesent nulla erat, porta nec risus a, cursus semper nibh. Vivamus laoreet purus eget imperdiet porta.</p>
+
+      <p>Aliquam pellentesque et velit nec dapibus. Nullam vitae ullamcorper diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elit nisl, venenatis vitae venenatis quis, ultricies sed metus. Etiam sed maximus tellus. Sed magna ipsum, pulvinar vel pretium quis, malesuada eget neque. Aliquam erat volutpat. Ut id ligula nibh. Nulla pellentesque placerat dolor id luctus. Nunc convallis augue nunc, vel facilisis metus congue quis. Nullam convallis, libero vitae suscipit eleifend, dolor neque luctus libero, in molestie est tortor eu arcu. Quisque sagittis finibus pretium. Donec non urna a tellus eleifend vehicula.</p>
+    </div>
+
+    <div class="col-sm-6">
+      <div role="tabpanel">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs nav-tabs-sticky" role="tablist">
+          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+          <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="home">
+            <p><strong>Home</strong></p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non sem dignissim, tempus tellus eget, efficitur erat. Aliquam semper finibus massa nec bibendum. Integer interdum, nisl vel molestie egestas, odio tellus rhoncus nisl, vel tincidunt leo ante et tortor. Fusce id nisl in felis commodo dictum. Vivamus non laoreet quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec efficitur vehicula laoreet. Aliquam vitae pretium urna. Donec elit neque, viverra vitae viverra et, elementum eget mauris. Fusce eget diam ut nunc viverra ullamcorper eget condimentum ex. Fusce lacinia iaculis enim, nec tincidunt ex iaculis ut. Mauris rutrum purus vitae purus consequat tincidunt. Integer vehicula orci a vulputate pulvinar.</p>
+
+            <p>Aliquam dignissim arcu non arcu ultrices interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc faucibus, risus ullamcorper dignissim mattis, lectus lectus consectetur nisi, sit amet pretium mi erat id erat. Nulla interdum diam id nisl tincidunt, eget gravida elit lacinia. Sed gravida diam sapien, ut sagittis nunc ullamcorper in. Curabitur nec ipsum vitae enim egestas varius. In quis sagittis leo.</p>
+
+            <p>Proin lorem diam, vestibulum eget ipsum vel, porta posuere orci. Donec pharetra, ligula at dapibus efficitur, erat augue finibus lectus, nec tincidunt quam elit at orci. Aliquam erat volutpat. Suspendisse facilisis malesuada quam, eu euismod mi efficitur a. Curabitur dignissim faucibus elit, vel laoreet erat eleifend nec. Pellentesque pharetra ac sapien et feugiat. Praesent non metus ut neque imperdiet mattis.</p>
+
+            <p>Aenean leo enim, tempus id dui eget, ultrices convallis nibh. In volutpat, nisi quis eleifend dignissim, mauris nisl placerat velit, eget lobortis risus ante non massa. Aliquam augue lectus, hendrerit sit amet finibus quis, tincidunt ut erat. Integer malesuada nunc at nibh sodales laoreet. Mauris vel arcu ullamcorper, feugiat nisi a, ultrices mauris. Quisque pretium viverra urna. Maecenas magna dui, sollicitudin in pharetra ut, finibus porta lectus. Donec elit nisi, vehicula non diam sit amet, lobortis suscipit magna. Etiam hendrerit volutpat feugiat. Ut euismod posuere purus, ut condimentum tellus rhoncus sed. In rutrum dictum nibh, in feugiat sapien euismod nec. Praesent nulla erat, porta nec risus a, cursus semper nibh. Vivamus laoreet purus eget imperdiet porta.</p>
+
+            <p>Aliquam pellentesque et velit nec dapibus. Nullam vitae ullamcorper diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elit nisl, venenatis vitae venenatis quis, ultricies sed metus. Etiam sed maximus tellus. Sed magna ipsum, pulvinar vel pretium quis, malesuada eget neque. Aliquam erat volutpat. Ut id ligula nibh. Nulla pellentesque placerat dolor id luctus. Nunc convallis augue nunc, vel facilisis metus congue quis. Nullam convallis, libero vitae suscipit eleifend, dolor neque luctus libero, in molestie est tortor eu arcu. Quisque sagittis finibus pretium. Donec non urna a tellus eleifend vehicula.</p>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="profile">
+            <p><strong>Profile</strong></p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non sem dignissim, tempus tellus eget, efficitur erat. Aliquam semper finibus massa nec bibendum. Integer interdum, nisl vel molestie egestas, odio tellus rhoncus nisl, vel tincidunt leo ante et tortor. Fusce id nisl in felis commodo dictum. Vivamus non laoreet quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec efficitur vehicula laoreet. Aliquam vitae pretium urna. Donec elit neque, viverra vitae viverra et, elementum eget mauris. Fusce eget diam ut nunc viverra ullamcorper eget condimentum ex. Fusce lacinia iaculis enim, nec tincidunt ex iaculis ut. Mauris rutrum purus vitae purus consequat tincidunt. Integer vehicula orci a vulputate pulvinar.</p>
+
+            <p>Aliquam dignissim arcu non arcu ultrices interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc faucibus, risus ullamcorper dignissim mattis, lectus lectus consectetur nisi, sit amet pretium mi erat id erat. Nulla interdum diam id nisl tincidunt, eget gravida elit lacinia. Sed gravida diam sapien, ut sagittis nunc ullamcorper in. Curabitur nec ipsum vitae enim egestas varius. In quis sagittis leo.</p>
+
+            <p>Proin lorem diam, vestibulum eget ipsum vel, porta posuere orci. Donec pharetra, ligula at dapibus efficitur, erat augue finibus lectus, nec tincidunt quam elit at orci. Aliquam erat volutpat. Suspendisse facilisis malesuada quam, eu euismod mi efficitur a. Curabitur dignissim faucibus elit, vel laoreet erat eleifend nec. Pellentesque pharetra ac sapien et feugiat. Praesent non metus ut neque imperdiet mattis.</p>
+
+            <p>Aenean leo enim, tempus id dui eget, ultrices convallis nibh. In volutpat, nisi quis eleifend dignissim, mauris nisl placerat velit, eget lobortis risus ante non massa. Aliquam augue lectus, hendrerit sit amet finibus quis, tincidunt ut erat. Integer malesuada nunc at nibh sodales laoreet. Mauris vel arcu ullamcorper, feugiat nisi a, ultrices mauris. Quisque pretium viverra urna. Maecenas magna dui, sollicitudin in pharetra ut, finibus porta lectus. Donec elit nisi, vehicula non diam sit amet, lobortis suscipit magna. Etiam hendrerit volutpat feugiat. Ut euismod posuere purus, ut condimentum tellus rhoncus sed. In rutrum dictum nibh, in feugiat sapien euismod nec. Praesent nulla erat, porta nec risus a, cursus semper nibh. Vivamus laoreet purus eget imperdiet porta.</p>
+
+            <p>Aliquam pellentesque et velit nec dapibus. Nullam vitae ullamcorper diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elit nisl, venenatis vitae venenatis quis, ultricies sed metus. Etiam sed maximus tellus. Sed magna ipsum, pulvinar vel pretium quis, malesuada eget neque. Aliquam erat volutpat. Ut id ligula nibh. Nulla pellentesque placerat dolor id luctus. Nunc convallis augue nunc, vel facilisis metus congue quis. Nullam convallis, libero vitae suscipit eleifend, dolor neque luctus libero, in molestie est tortor eu arcu. Quisque sagittis finibus pretium. Donec non urna a tellus eleifend vehicula.</p>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="messages">
+
+            <p><strong>Messages</strong></p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non sem dignissim, tempus tellus eget, efficitur erat. Aliquam semper finibus massa nec bibendum. Integer interdum, nisl vel molestie egestas, odio tellus rhoncus nisl, vel tincidunt leo ante et tortor. Fusce id nisl in felis commodo dictum. Vivamus non laoreet quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec efficitur vehicula laoreet. Aliquam vitae pretium urna. Donec elit neque, viverra vitae viverra et, elementum eget mauris. Fusce eget diam ut nunc viverra ullamcorper eget condimentum ex. Fusce lacinia iaculis enim, nec tincidunt ex iaculis ut. Mauris rutrum purus vitae purus consequat tincidunt. Integer vehicula orci a vulputate pulvinar.</p>
+
+            <p>Aliquam dignissim arcu non arcu ultrices interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc faucibus, risus ullamcorper dignissim mattis, lectus lectus consectetur nisi, sit amet pretium mi erat id erat. Nulla interdum diam id nisl tincidunt, eget gravida elit lacinia. Sed gravida diam sapien, ut sagittis nunc ullamcorper in. Curabitur nec ipsum vitae enim egestas varius. In quis sagittis leo.</p>
+
+            <p>Proin lorem diam, vestibulum eget ipsum vel, porta posuere orci. Donec pharetra, ligula at dapibus efficitur, erat augue finibus lectus, nec tincidunt quam elit at orci. Aliquam erat volutpat. Suspendisse facilisis malesuada quam, eu euismod mi efficitur a. Curabitur dignissim faucibus elit, vel laoreet erat eleifend nec. Pellentesque pharetra ac sapien et feugiat. Praesent non metus ut neque imperdiet mattis.</p>
+
+            <p>Aenean leo enim, tempus id dui eget, ultrices convallis nibh. In volutpat, nisi quis eleifend dignissim, mauris nisl placerat velit, eget lobortis risus ante non massa. Aliquam augue lectus, hendrerit sit amet finibus quis, tincidunt ut erat. Integer malesuada nunc at nibh sodales laoreet. Mauris vel arcu ullamcorper, feugiat nisi a, ultrices mauris. Quisque pretium viverra urna. Maecenas magna dui, sollicitudin in pharetra ut, finibus porta lectus. Donec elit nisi, vehicula non diam sit amet, lobortis suscipit magna. Etiam hendrerit volutpat feugiat. Ut euismod posuere purus, ut condimentum tellus rhoncus sed. In rutrum dictum nibh, in feugiat sapien euismod nec. Praesent nulla erat, porta nec risus a, cursus semper nibh. Vivamus laoreet purus eget imperdiet porta.</p>
+
+            <p>Aliquam pellentesque et velit nec dapibus. Nullam vitae ullamcorper diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elit nisl, venenatis vitae venenatis quis, ultricies sed metus. Etiam sed maximus tellus. Sed magna ipsum, pulvinar vel pretium quis, malesuada eget neque. Aliquam erat volutpat. Ut id ligula nibh. Nulla pellentesque placerat dolor id luctus. Nunc convallis augue nunc, vel facilisis metus congue quis. Nullam convallis, libero vitae suscipit eleifend, dolor neque luctus libero, in molestie est tortor eu arcu. Quisque sagittis finibus pretium. Donec non urna a tellus eleifend vehicula.</p>
+
+          </div>
+          <div role="tabpanel" class="tab-pane" id="settings">
+
+            <p><strong>Settings</strong></p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non sem dignissim, tempus tellus eget, efficitur erat. Aliquam semper finibus massa nec bibendum. Integer interdum, nisl vel molestie egestas, odio tellus rhoncus nisl, vel tincidunt leo ante et tortor. Fusce id nisl in felis commodo dictum. Vivamus non laoreet quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec efficitur vehicula laoreet. Aliquam vitae pretium urna. Donec elit neque, viverra vitae viverra et, elementum eget mauris. Fusce eget diam ut nunc viverra ullamcorper eget condimentum ex. Fusce lacinia iaculis enim, nec tincidunt ex iaculis ut. Mauris rutrum purus vitae purus consequat tincidunt. Integer vehicula orci a vulputate pulvinar.</p>
+
+            <p>Aliquam dignissim arcu non arcu ultrices interdum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc faucibus, risus ullamcorper dignissim mattis, lectus lectus consectetur nisi, sit amet pretium mi erat id erat. Nulla interdum diam id nisl tincidunt, eget gravida elit lacinia. Sed gravida diam sapien, ut sagittis nunc ullamcorper in. Curabitur nec ipsum vitae enim egestas varius. In quis sagittis leo.</p>
+
+            <p>Proin lorem diam, vestibulum eget ipsum vel, porta posuere orci. Donec pharetra, ligula at dapibus efficitur, erat augue finibus lectus, nec tincidunt quam elit at orci. Aliquam erat volutpat. Suspendisse facilisis malesuada quam, eu euismod mi efficitur a. Curabitur dignissim faucibus elit, vel laoreet erat eleifend nec. Pellentesque pharetra ac sapien et feugiat. Praesent non metus ut neque imperdiet mattis.</p>
+
+            <p>Aenean leo enim, tempus id dui eget, ultrices convallis nibh. In volutpat, nisi quis eleifend dignissim, mauris nisl placerat velit, eget lobortis risus ante non massa. Aliquam augue lectus, hendrerit sit amet finibus quis, tincidunt ut erat. Integer malesuada nunc at nibh sodales laoreet. Mauris vel arcu ullamcorper, feugiat nisi a, ultrices mauris. Quisque pretium viverra urna. Maecenas magna dui, sollicitudin in pharetra ut, finibus porta lectus. Donec elit nisi, vehicula non diam sit amet, lobortis suscipit magna. Etiam hendrerit volutpat feugiat. Ut euismod posuere purus, ut condimentum tellus rhoncus sed. In rutrum dictum nibh, in feugiat sapien euismod nec. Praesent nulla erat, porta nec risus a, cursus semper nibh. Vivamus laoreet purus eget imperdiet porta.</p>
+
+            <p>Aliquam pellentesque et velit nec dapibus. Nullam vitae ullamcorper diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis elit nisl, venenatis vitae venenatis quis, ultricies sed metus. Etiam sed maximus tellus. Sed magna ipsum, pulvinar vel pretium quis, malesuada eget neque. Aliquam erat volutpat. Ut id ligula nibh. Nulla pellentesque placerat dolor id luctus. Nunc convallis augue nunc, vel facilisis metus congue quis. Nullam convallis, libero vitae suscipit eleifend, dolor neque luctus libero, in molestie est tortor eu arcu. Quisque sagittis finibus pretium. Donec non urna a tellus eleifend vehicula.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <p>Tests:</p>
+      <ol>
+        <li><a href="#settings">Tab change</a>: Should show "Settings" and the Settings tab should be active.</li>
+        <li><a href="#home">First tab</a>: Should show "Home" and the Home tab should be active.</li>
+        <li><a onclick="window.history.go(-1)">Back button</a>: Should go back to the settings tab.</li>
+      </ol>
+    </div>
+
+  </div>
+  </body>
+</html>
