@@ -13,15 +13,27 @@ Run this in document ready or some equivalent initializer on your page:
 
 Where `nav-tabs` is the default class for the bootstrap tabs feature.
 
-Override the default `href` attribute used as selector when you need to activate multiple TabPanels at once with a single Tab using the `data-target` attribute.
+Options
+=======
 
-    var options = { selectorAttribute: "data-target" };
-    $('.nav-tabs').stickyTabs( options );
+The following options are available to pass to jquery-stickytabs on instantiation
 
-Prevent the page from jumping down to the tab content by setting the backToTop setting to true.
+**Example**
 
-    var options = { backToTop: true };
-    $('.nav-tabs').stickyTabs( options );
+````javascript
+$(function() {
+	var options = { 
+		selectorAttribute: "data-target",
+		backToTop: true
+	};
+	$('.nav-tabs').stickyTabs( options );
+});
+````
+
+|option|default|description|
+|------|-------|-----------|
+| selectorAttribute | false | Override the default `href` attribute used as selector when you need to activate multiple TabPanels at once with a single Tab using the `data-target` attribute. |
+| backToTop |false | Prevent the page from jumping down to the tab content by setting the backToTop setting to true. |
 
 NuGet package
 =============
