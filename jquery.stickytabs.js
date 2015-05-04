@@ -14,6 +14,7 @@
         var context, settings, showTabFromHash, changeHash, backToTop;
 
         context = this;
+
         settings = $.extend({
             getHashCallback: function (hash, btn) {
                 return hash;
@@ -35,25 +36,28 @@
 
         // We use pushState if it's available so the page won't jump, otherwise a shim.
         changeHash = function (hash) {
-            var url, sV, sH;
+            var url, scrollV, scrollH;
+            scrollV = document.body.scrollTop;
+            scrollH = document.body.scrollLeft;
             url = window.location.pathname + window.location.search;
-            if (history && history.pushState && settings.tabPersistence === true) {
+            if (settings.tabPersistence === true) {
                 url += '#' + hash;
-                history.pushState(null, null, url);
+                if (history && history.pushState) {
+                    history.pushState(null, null, url);
+                } else {
+                    window.location = url;
+                }
             } else if (history && history.replaceState) {
                 history.replaceState(null, null, url);
-            } else {
-                sV = document.body.scrollTop;
-                sH = document.body.scrollLeft;
-                window.location.hash = hash;
-                document.body.scrollTop = sV;
-                document.body.scrollLeft = sH;
             }
+            document.body.scrollTop = scrollV;
+            document.body.scrollLeft = scrollH;
         };
 
         backToTop = function () {
             if (settings.backToTop === true) {
                 window.scrollTo(0, 0);
+                document.body.scrollTop;
             }
         };
 
