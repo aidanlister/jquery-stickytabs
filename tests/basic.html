@@ -9,7 +9,11 @@
     <script src="../jquery.stickytabs.js"></script>
     <script>
     $(function() {
-        $('.nav-tabs-sticky').stickyTabs();
+      var options = { 
+        tabPersistence: true,
+        backToTop: true
+      };
+      $('.nav-tabs').stickyTabs( options );
     });
     </script>
   </head>

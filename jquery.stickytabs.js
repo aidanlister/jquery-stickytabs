@@ -10,6 +10,7 @@
 
         var settings = $.extend({
             getHashCallback: function(hash, btn) { return hash },
+            tabPersistence: true,
             selectorAttribute: "href",
             backToTop: false,
             initialTab: $('li.active > a', context)
@@ -25,16 +26,20 @@
 
         // We use pushState if it's available so the page won't jump, otherwise a shim.
         var changeHash = function(hash) {
-          if (history && history.pushState) {
-            history.pushState(null, null, window.location.pathname + window.location.search + '#' + hash);
+          var url = window.location.pathname + window.location.search;
+          if (history && history.pushState && settings.tabPersistence === true) {
+            url += '#' + hash;
+            history.pushState(null, null, url);
+          } else if (history && history.replaceState) {
+            history.replaceState(null, null, url);
           } else {
-            scrollV = document.body.scrollTop;
-            scrollH = document.body.scrollLeft;
-            window.location.hash = hash;
-            document.body.scrollTop = scrollV;
-            document.body.scrollLeft = scrollH;
+              scrollV = document.body.scrollTop;
+              scrollH = document.body.scrollLeft;
+              window.location.hash = hash;
+              document.body.scrollTop = scrollV;
+              document.body.scrollLeft = scrollH;
+            }
           }
-        }
 
         var backToTop = function() {
           if (settings.backToTop === true) {
