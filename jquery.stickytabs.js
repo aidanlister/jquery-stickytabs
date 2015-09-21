@@ -14,16 +14,34 @@
             },
             selectorAttribute: "href",
             backToTop: false,
-            initialTab: $('li.active > a', context)
+            initialTab: $('li.active > a', context),
+            fragmentPathSeparator: '&'
         }, options);
 
         // Show the tab corresponding with the hash in the URL, or the first tab.
         var showTabFromHash = function () {
             var hash = settings.selectorAttribute == "href" ? window.location.hash : window.location.hash.substring(1);
-            var selector = hash ? 'a[' + settings.selectorAttribute + '="' + hash + '"]' : settings.initialTab;
+            var selector = hash ? 'a[' + settings.selectorAttribute + '="' + hash.split(settings.fragmentPathSeparator)[0] + '"]' : settings.initialTab;
             $(selector, context).tab('show');
-            setTimeout(backToTop, 1);
+            if (settings.backToTop === true) {
+                setTimeout(backToTop, 1);
+            }
+            else {
+                followRemainingFragmentPath(hash);
+            }
         };
+
+        //Check whether multiple pathElements were indicated and follow them, make sure to skip the first one was already consumed to activate the tab
+        var followRemainingFragmentPath = function(hash) {
+            if(hash){
+                var fragmentPathElements = hash.split(settings.fragmentPathSeparator);
+                if (fragmentPathElements.length > 1) {
+                    for (var i = 1; i < fragmentPathElements.length; i++) {
+                        window.location.hash = fragmentPathElements[i];
+                    }
+                }
+            }
+        }
 
         // Use pushState if it is available so the page will not jump, otherwise a shim.
         var changeHash = function (hash) {
@@ -39,9 +57,7 @@
         };
 
         var backToTop = function () {
-            if (settings.backToTop === true) {
-                window.scrollTo(0, 0);
-            }
+            window.scrollTo(0, 0);
         };
 
         // Set the correct tab when the page loads
