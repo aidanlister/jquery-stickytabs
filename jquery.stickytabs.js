@@ -13,6 +13,7 @@
                 return hash
             },
             selectorAttribute: "href",
+            selectorOperator: "=",
             backToTop: false,
             initialTab: $('li.active > a', context),
             fragmentPathSeparator: '&'
@@ -21,7 +22,7 @@
         // Show the tab corresponding with the hash in the URL, or the first tab.
         var showTabFromHash = function () {
             var hash = settings.selectorAttribute == "href" ? window.location.hash : window.location.hash.substring(1);
-            var selector = hash ? 'a[' + settings.selectorAttribute + '="' + hash.split(settings.fragmentPathSeparator)[0] + '"]' : settings.initialTab;
+            var selector = hash ? 'a[' + settings.selectorAttribute + settings.selectorOperator + '"' + hash.split(settings.fragmentPathSeparator)[0] + '"]' : settings.initialTab;
             $(selector, context).tab('show');
             if (settings.backToTop === true) {
                 setTimeout(backToTop, 1);
