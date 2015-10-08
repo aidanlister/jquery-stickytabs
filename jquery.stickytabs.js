@@ -42,7 +42,7 @@
                     }
                 }
             }
-        }
+        };
 
         // Use pushState if it is available so the page will not jump, otherwise a shim.
         var changeHash = function (hash) {
@@ -72,7 +72,9 @@
             var hash = this.href.split('#')[1];
             var adjustedHash = settings.getHashCallback(hash, this);
             changeHash(adjustedHash);
-            setTimeout(backToTop, 1);
+            if (settings.backToTop === true) {
+                setTimeout(backToTop, 1);
+            }
         });
 
         return this;
