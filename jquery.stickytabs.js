@@ -36,9 +36,22 @@
             else if (hash) {
                 var indexOfFirstFragmentPathSeparator = hash.indexOf(settings.fragmentPathSeparator);
                 if (indexOfFirstFragmentPathSeparator > 0) {
-                    showTabFromHash(hash.substring(indexOfFirstFragmentPathSeparator + 1));
+                    var remainingHash = hash.substring(indexOfFirstFragmentPathSeparator + 1);
+                    var element = document.getElementById(remainingHash);
+                    if (element) {
+                        scrollToElement($(element));
+                    }
+                    else {
+                        showTabFromHash(remainingHash);
+                    }
                 }
             }
+        };
+
+        var scrollToElement = function (element) {
+            $('html, body').animate({
+                scrollTop: $(element).offset().top
+            }, 0);
         };
 
         // Use pushState if it is available so the page will not jump, otherwise a shim.
