@@ -20,26 +20,23 @@
         }, options);
 
         // Show the tab corresponding with the hash in the URL, or the first tab.
-        var showTabFromHash = function () {
-            var hash = settings.selectorAttribute == "href" ? window.location.hash : window.location.hash.substring(1);
-            var selector = hash ? 'a[' + settings.selectorAttribute + settings.selectorOperator + '"' + decodeURIComponent(hash.split(settings.fragmentPathSeparator)[0] + '"]') : settings.initialTab;
+        var showTabFromWindowLocationHash = function () {
+            var decodedHash = decodeURIComponent(window.location.hash);
+            decodedHash = settings.selectorAttribute === "href" ? decodedHash : decodedHash.substring(1);
+
+            showTabFromHash(decodedHash);
+        };
+
+        var showTabFromHash = function (hash) {
+            var selector = hash ? 'a[' + settings.selectorAttribute + settings.selectorOperator + '"' + hash.split(settings.fragmentPathSeparator)[0] + '"]' : settings.initialTab;
             $(selector, context).tab('show');
             if (settings.backToTop === true) {
                 setTimeout(backToTop, 1);
             }
-            else {
-                followRemainingFragmentPath(hash);
-            }
-        };
-
-        //Check whether multiple pathElements were indicated and follow them, make sure to skip the first one was already consumed to activate the tab
-        var followRemainingFragmentPath = function(hash) {
-            if(hash){
-                var fragmentPathElements = hash.split(settings.fragmentPathSeparator);
-                if (fragmentPathElements.length > 1) {
-                    for (var i = 1; i < fragmentPathElements.length; i++) {
-                        window.location.hash = fragmentPathElements[i];
-                    }
+            else if (hash) {
+                var indexOfFirstFragmentPathSeparator = hash.indexOf(settings.fragmentPathSeparator);
+                if (indexOfFirstFragmentPathSeparator > 0) {
+                    showTabFromHash(hash.substring(indexOfFirstFragmentPathSeparator + 1));
                 }
             }
         };
@@ -62,10 +59,10 @@
         };
 
         // Set the correct tab when the page loads
-        showTabFromHash();
+        showTabFromWindowLocationHash();
 
         // Set the correct tab when a user uses their back/forward button
-        $(window).on('hashchange', showTabFromHash);
+        $(window).on('hashchange', showTabFromWindowLocationHash);
 
         // Change the URL when tabs are clicked
         $('a', context).on('click', function (e) {
