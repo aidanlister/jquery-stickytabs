@@ -12,6 +12,7 @@
             getHashCallback: function(hash, btn) { return hash },
             selectorAttribute: "href",
             backToTop: false,
+            replaceState: false,
             initialTab: $('li.active > a', context)
         }, options );
 
@@ -23,10 +24,13 @@
           setTimeout(backToTop, 1);
         }
 
-        // We use pushState if it's available so the page won't jump, otherwise a shim.
+        // We use pushState (or replaceState) if it's available so the page won't jump, otherwise a shim.
         var changeHash = function(hash) {
-          if (history && history.pushState) {
-            history.pushState(null, null, window.location.pathname + window.location.search + '#' + hash);
+            if (history) {
+                var action = settings.replaceState ? history.replaceState : history.pushState;
+                if (action) {
+                    action(null, null, window.location.pathname + window.location.search + '#' + hash);
+                }
           } else {
             scrollV = document.body.scrollTop;
             scrollH = document.body.scrollLeft;
