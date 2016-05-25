@@ -1,7 +1,7 @@
 jquery-stickytabs
 =================
 
-Provides pushState (back and forward button support) to Bootstrap tabs
+Provides deep linking and pushState (back and forward button support) to Bootstrap tabs
 
 
 Usage
@@ -16,13 +16,14 @@ Where `nav-tabs` is the default class for the bootstrap tabs feature.
 Options
 =======
 
-The following options are available to pass to jquery-stickytabs on instantiation
+The following options are available to pass to jquery-stickytabs on instantiation.
 
 **Example**
 
 ````javascript
 $(function() {
 	var options = { 
+		tabPersistence: true,
 		selectorAttribute: "data-target",
 		backToTop: true
 	};
@@ -32,6 +33,7 @@ $(function() {
 
 |option|default|description|
 |------|-------|-----------|
+| tabPersistence | true | Tab navigation will be persisted in the browser history (back and forward button support). |
 | selectorAttribute | false | Override the default `href` attribute used as selector when you need to activate multiple TabPanels at once with a single Tab using the `data-target` attribute. |
 | backToTop |false | Prevent the page from jumping down to the tab content by setting the backToTop setting to true. |
 
