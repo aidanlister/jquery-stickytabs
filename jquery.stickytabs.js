@@ -21,11 +21,11 @@
           var hash = settings.selectorAttribute == "href" ? window.location.hash : window.location.hash.substring(1);
           if (hash != '') {
             var selector = hash ? 'a[' + settings.selectorAttribute +'="' + hash + '"]' : settings.initialTab;
-              if (settings.showParentTabs === true) {
-                showParentTabs(hash);
-              }
-              $(selector, context).tab('show');
-              setTimeout(backToTop, 1);
+            if (settings.showParentTabs === true) {
+              showParentTabs(hash);
+            }
+            $(selector, context).tab('show');
+            setTimeout(backToTop, 1);
           }
         }
 
