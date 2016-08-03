@@ -11,6 +11,7 @@
         var settings = $.extend({
             getHashCallback: function(hash, btn) { return hash },
             selectorAttribute: "href",
+            showTabUsingClickTrigger: false,
             backToTop: false,
             initialTab: $('li.active > a', context)
         }, options );
@@ -20,7 +21,11 @@
           var hash = settings.selectorAttribute == "href" ? window.location.hash : window.location.hash.substring(1);
           if (hash != '') {
               var selector = hash ? 'a[' + settings.selectorAttribute +'="' + hash + '"]' : settings.initialTab;
-              $(selector, context).tab('show');
+              if (settings.showTabUsingClickTrigger === true) {
+                $(selector, context).trigger('click');
+              } else {
+                $(selector, context).tab('show');
+              }
               setTimeout(backToTop, 1);
           }
         }
