@@ -34,6 +34,7 @@ $(function() {
 |------|-------|-----------|
 | selectorAttribute | false | Override the default `href` attribute used as selector when you need to activate multiple TabPanels at once with a single Tab using the `data-target` attribute. |
 | backToTop |false | Prevent the page from jumping down to the tab content by setting the backToTop setting to true. |
+| showTabUsingClickTrigger |false | Activate the requeted tab using the click trigger so that any behaviours on the click trigger are activated. |
 
 NuGet package
 =============
