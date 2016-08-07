@@ -1,7 +1,18 @@
 jquery-stickytabs
 =================
+[![npm version](https://badge.fury.io/js/jquery-stickytabs.svg)](https://badge.fury.io/js/jquery-stickytabs)
 
 Provides pushState (back and forward button support) to Bootstrap tabs
+
+Install
+=======
+NPM
+---
+type `npm install jquery-stickytabs --save` to install the library via NPM
+
+Bower
+-----
+type `bower install jquery-stickytabs --save` to install the library via bower
 
 
 Usage
@@ -34,6 +45,7 @@ $(function() {
 |------|-------|-----------|
 | selectorAttribute | false | Override the default `href` attribute used as selector when you need to activate multiple TabPanels at once with a single Tab using the `data-target` attribute. |
 | backToTop |false | Prevent the page from jumping down to the tab content by setting the backToTop setting to true. |
+
 
 NuGet package
 =============
