@@ -2,21 +2,22 @@
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>Testing jQuery.stickytabs.js</title>
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.css">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.js"></script>
-    <script src="../jquery.stickytabs.js"></script>
+    <title>Testing jQuery.stickytabs-multi.js</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script src="../jquery.stickytabs-multi.js"></script>
     <script>
-    $(function() {
-        var options = { selectorAttribute: "data-target" };
-        $('.nav-tabs-sticky').stickyTabs(options);
-    });
+      $(function() {
+          var options = { selectorAttribute: "data-target" };
+          $('.nav-tabs-sticky').stickyTabs(options);
+      });
     </script>
   </head>
   <body>
   <div class="container">
     <div class="col-xs-12">
+      <p><strong>Some introduction</strong></p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non sem dignissim, tempus tellus eget, efficitur erat. Aliquam semper finibus massa nec bibendum. Integer interdum, nisl vel molestie egestas, odio tellus rhoncus nisl, vel tincidunt leo ante et tortor. Fusce id nisl in felis commodo dictum. Vivamus non laoreet quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec efficitur vehicula laoreet. Aliquam vitae pretium urna. Donec elit neque, viverra vitae viverra et, elementum eget mauris. Fusce eget diam ut nunc viverra ullamcorper eget condimentum ex. Fusce lacinia iaculis enim, nec tincidunt ex iaculis ut. Mauris rutrum purus vitae purus consequat tincidunt. Integer vehicula orci a vulputate pulvinar.</p>
     </div>
 
@@ -173,10 +174,10 @@
     <div class="col-sm-4">
       <p>Tests:</p>
       <ol>
-        <li><a href="#[data-section='section2']">Tab change</a>: Should show "Section 2" and the Section 2 tab should be active.</li>
-        <li><a href="#[data-section='section1']">First tab</a>: Should show "Section 1" and the Section 1 tab should be active.</li>
-        <li><a href="#[data-section*='section']">All sections</a>: Should show all Sections and the "All" tab should be active.</li>
-        <li><a onclick="window.history.go(-1)">Back button</a>: Should go back to the settings tab.</li>
+        <li><a href="#[data-section='section2']">Tab change</a>: Should show "Section 2" and the Section 2 Tab should be active.</li>
+        <li><a href="#[data-section='section1']">First tab</a>: Should show "Section 1" and the Section 1 Tab should be active.</li>
+        <li><a href="#[data-section*='section']">All sections</a>: Should show all Sections and the "All" Tab should be active.</li>
+        <li><a onclick="window.history.go(-1)">Back button</a>: Should go back to a previously selected Tab.</li>
         <li><a href="#[data-section='section5']&amp;[data-section='section5.2']">Section 5.2</a>: Should open nested Tab 5.2.</li>
         <li><a href="#[data-section='section5']&amp;[data-section='section5.3']&amp;[data-section='section5.3.3']" >Section 5.3.3</a>: Should open nested Tab 5.3.3.</li>
         <li><a href="#[data-section='section5']&amp;[data-section='section5.3']&amp;[data-section='section5.3.3']&amp;section5.3.3-p6" >Section 5.3.3.6</a>: Should open nested Tab 5.3.3. and link to section 5.3.3.6</li>
