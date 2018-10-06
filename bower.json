@@ -5,7 +5,7 @@
   "authors": [
     "Aidan Lister <aidan@aidanlister.com>"
   ],
-  "description": "Provides persistant state (back and forward button support) for Bootstrap tabs.",
+  "description": "Provides persistent state (back and forward button support) for Bootstrap tabs.",
   "main": "jquery.stickytabs.js",
   "keywords": [
     "bootstrap",
