@@ -1,0 +1,22 @@
+{
+  "name": "jquery-stickytabs",
+  "version": "1.2.4",
+  "description": "jquery-stickytabs =================",
+  "main": "jquery.stickytabs.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thecsea/jquery-stickytabs.git"
+  },
+  "author": "Claudio Cardinale, Aidan Lister",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thecsea/jquery-stickytabs/issues"
+  },
+  "homepage": "https://github.com/thecsea/jquery-stickytabs#readme"
+}
