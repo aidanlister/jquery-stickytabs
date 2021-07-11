@@ -2,7 +2,7 @@
  * jQuery Plugin: Sticky Tabs
  *
  * @author Aidan Lister <aidan@php.net>
- * @version 1.2.0
+ * @version 1.2.4
  */
 (function ( $ ) {
     $.fn.stickyTabs = function( options ) {
@@ -12,6 +12,7 @@
             getHashCallback: function(hash, btn) { return hash },
             selectorAttribute: "href",
             backToTop: false,
+            showParentTabs: false,
             initialTab: $('li.active > a', context)
         }, options );
 
@@ -19,9 +20,20 @@
         var showTabFromHash = function() {
           var hash = settings.selectorAttribute == "href" ? window.location.hash : window.location.hash.substring(1);
           if (hash != '') {
-              var selector = hash ? 'a[' + settings.selectorAttribute +'="' + hash + '"]' : settings.initialTab;
-              $(selector, context).tab('show');
-              setTimeout(backToTop, 1);
+            var selector = hash ? 'a[' + settings.selectorAttribute +'="' + hash + '"]' : settings.initialTab;
+            if (settings.showParentTabs === true) {
+              showParentTabs(hash);
+            }
+            $(selector, context).tab('show');
+            setTimeout(backToTop, 1);
+          }
+        }
+
+        var showParentTabs = function(hash) {
+          parent_hash = $('a[' + settings.selectorAttribute +'="' + hash + '"]').parents('.tab-pane').attr('id');
+          if (parent_hash !== undefined) {
+            $('a[' + settings.selectorAttribute +'="#' + parent_hash + '"]').tab('show');
+            showParentTabs('#' + parent_hash);
           }
         }
 
